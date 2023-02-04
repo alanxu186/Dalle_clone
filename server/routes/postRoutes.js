@@ -20,6 +20,8 @@ router.route('/').get(async (req, res) => {
 });
 
 //create a posts
+//cloudinary will take the uploaded image and store it then return a URL
+//once cloudinary returns URL, create the new post
 router.route('/').post(async (req, res) => {
     try {
         const { name, prompt, photo } = req.body;
