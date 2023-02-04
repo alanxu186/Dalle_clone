@@ -15,6 +15,8 @@ cloudinary.config({
 })
 
 //get all posts
+//try fetching for all posts
+//catch and return error message if GET request fails
 router.route('/').get(async (req, res) => {
     try {
         const posts = await Post.find({});
