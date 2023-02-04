@@ -59,7 +59,7 @@ const CreatePost = () => {
         navigate('/');
       } catch (error) {
         alert(error)
-      } finally{
+      } finally {
         setLoading(false);
       }
     } else {
