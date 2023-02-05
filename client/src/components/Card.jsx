@@ -3,9 +3,19 @@ import React from 'react';
 import { download } from '../assets';
 import { downloadImage } from '../utils';
 
-const Card = () => {
+const Card = ({ _id, name, prompt, photo }) => {
     return (
-        <div>Card</div>
+        <div className='rounded-xl group relative shadow-cardhover:shadow-cardhover card'>
+            <img
+                className='w-full h-auto object-cover rounded-xl'
+                src={photo}
+                alt={prompt}
+            >
+            </img>
+            <div className='group-hover:flex flex-col max-h-[94.5%] hidden absolute bottom-0 left-0 right-0 bg-[#10131f] m-2 p-4 rounded-md'>
+                <p className='text-white text-sm overflow-y-auto'>{prompt}</p>
+            </div>
+        </div>
     )
 }
 
