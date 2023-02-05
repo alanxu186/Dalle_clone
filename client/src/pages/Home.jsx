@@ -19,7 +19,7 @@ const Home = () => {
   const [allPosts, setAllPosts] = useState(null);
 
   const [searchText, setSearchText] = useState('');
-  const [searchResults, setSearchResults] = useState(null);
+  const [searchedResults, setSearchedResults] = useState(null);
   const [searchTimeout, setSearchTimeout] = useState(null);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Home = () => {
       setTimeout(() => {
         const searchResults = allPosts.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
 
-        setSearchResults(searchResults);
+        setSearchedResults(searchResults);
       }, 500)
     );
   }
@@ -71,7 +71,14 @@ const Home = () => {
       </div>
 
       <div className="mt-16">
-        <FormField />
+        <FormField 
+          LabelName='Search posts'
+          type='text'
+          name='text'
+          placeholder='Search posts'
+          value={searchText}
+          handleChange={handleSearchChange}
+        />
       </div>
 
       <div className="mt-10">
@@ -90,7 +97,7 @@ const Home = () => {
             <div className="grid lg:grid-cols-4 sm:grid-cols-1 xs:grid-cols-2 grid-cols-1 gap-3">
               {searchText ? (
                 <RenderCards
-                  data={[]}
+                  data={searchedResults}
                   title="No search results found"
                 />
               ) : (
