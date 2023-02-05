@@ -18,7 +18,8 @@
     "tailwindcss",
     "ukiyo",
     "vaporwave",
-    "velociraptor"
+    "velociraptor",
+    "vite"
   ],
   "editor.defaultFormatter": null,
   "editor.formatOnSave": true,
