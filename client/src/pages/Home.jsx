@@ -71,7 +71,7 @@ const Home = () => {
       </div>
 
       <div className="mt-16">
-        <FormField 
+        <FormField
           LabelName='Search posts'
           type='text'
           name='text'
